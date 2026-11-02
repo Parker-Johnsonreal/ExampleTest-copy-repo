@@ -5,19 +5,28 @@ import Page from './page.js';
  * sub page containing specific selectors and methods for a specific page
  */
 class LoginPage extends Page {
+    username = 'standard_user';
+    password = 'secret_sauce';
     /**
      * define selectors using getter methods
      */
+        get username () {
+        return $('standard_user');
+    }
+
+    get password () {
+        return $('secret_sauce');
+    }
+
+    get btnSubmit () {
+        return $('#login-button');
+    }
     get inputUsername () {
-        return $('#username');
+        return $('#user-name');
     }
 
     get inputPassword () {
         return $('#password');
-    }
-
-    get btnSubmit () {
-        return $('button[type="submit"]');
     }
 
     /**
@@ -25,17 +34,18 @@ class LoginPage extends Page {
      * e.g. to login using username and password
      */
     async login (username, password) {
-        await this.inputUsername.setValue(username);
-        await this.inputPassword.setValue(password);
-        await this.btnSubmit.click();
-    }
+    await this.inputUsername.setValue(username);
+    await this.inputPassword.setValue(password);
+    await this.btnSubmit.click();
+}
 
     /**
      * overwrite specific options to adapt it to page object
      */
     open () {
-        return super.open('login');
+        return super.open('');
     }
 }
 
 export default new LoginPage();
+
