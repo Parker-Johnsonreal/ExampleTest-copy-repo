@@ -14,6 +14,17 @@ class LoginPage extends Page {
         return $('standard_user');
     }
 
+    get username () {
+        return $('problem_user');
+    }
+
+    get username () {
+        return $('error_user');
+    }
+
+    get username () {
+        return $('visual_user');
+    }
     get password () {
         return $('secret_sauce');
     }
