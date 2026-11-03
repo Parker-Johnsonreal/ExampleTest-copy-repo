@@ -5,29 +5,19 @@ import Page from './page.js';
  * sub page containing specific selectors and methods for a specific page
  */
 class LoginPage extends Page {
-    username = 'standard_user';
-    password = 'secret_sauce';
+   
+    credentials = {
+        users: {
+            standard: 'standard_user',
+            problem: 'problem_user',
+            error: 'error_user',
+            visual: 'visual_user'
+        },
+        password: 'secret_sauce'
+        }
     /**
      * define selectors using getter methods
      */
-        get username () {
-        return $('standard_user');
-    }
-
-    get username () {
-        return $('problem_user');
-    }
-
-    get username () {
-        return $('error_user');
-    }
-
-    get username () {
-        return $('visual_user');
-    }
-    get password () {
-        return $('secret_sauce');
-    }
 
     get btnSubmit () {
         return $('#login-button');
